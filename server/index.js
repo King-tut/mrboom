@@ -12,8 +12,13 @@ import generalRoutes from './routes/general.js'
 import managementRoutes from './routes/management.js'
 import salesRoutes from './routes/sales.js'
 
+//Data imports
+
+import User from "./models/User.js";
+import {dataUser} from "./data/index.js"
+
  
-//Connecting to MongoDB mongodb://127.0.0.1:5003/mrboom
+//Connecting to MongoDB mongodb://127.0.0.1:5003/metroboomin
 const PORT = process.env.PORT || 9000
 
 mongoose.connect(process.env.MONGO_URL).then(()=>{
@@ -46,4 +51,6 @@ app.use("/sales", salesRoutes);
 
 app.listen(PORT, ()=>{
     console.log(`The server is running on ${PORT}`)
+    //Added the seed/mock data...DO NOT UNCOMMENT
+    //User.insertMany(dataUser)
 })
