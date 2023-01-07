@@ -15,7 +15,9 @@ import salesRoutes from './routes/sales.js'
 //Data imports
 
 import User from "./models/User.js";
-import {dataUser} from "./data/index.js"
+import Product from "./models/Product.js"
+import ProductStat from "./models/ProductStat.js"
+import {dataUser, dataProduct,dataProductStat} from "./data/index.js"
 
  
 //Connecting to MongoDB mongodb://127.0.0.1:5003/metroboomin
@@ -52,5 +54,7 @@ app.use("/sales", salesRoutes);
 app.listen(PORT, ()=>{
     console.log(`The server is running on ${PORT}`)
     //Added the seed/mock data...DO NOT UNCOMMENT
-    //User.insertMany(dataUser)
+    //Product.insertMany(dataProduct)
+    //ProductStat.insertMany(dataProductStat)
+   // User.insertMany(dataUser)
 })
