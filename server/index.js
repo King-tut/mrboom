@@ -17,7 +17,8 @@ import salesRoutes from './routes/sales.js'
 import User from "./models/User.js";
 import Product from "./models/Product.js"
 import ProductStat from "./models/ProductStat.js"
-import {dataUser, dataProduct,dataProductStat} from "./data/index.js"
+import {dataUser, dataProduct,dataProductStat, dataTransaction} from "./data/index.js"
+import Transaction from './models/Transaction.js';
 
  
 //Connecting to MongoDB mongodb://127.0.0.1:5003/metroboomin
@@ -57,4 +58,5 @@ app.listen(PORT, ()=>{
     //Product.insertMany(dataProduct)
     //ProductStat.insertMany(dataProductStat)
    // User.insertMany(dataUser)
+   //Transaction.insertMany(dataTransaction)
 })
